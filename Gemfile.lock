@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    junctions (0.0.1)
+    junctions (0.0.2)
       activesupport
 
 GEM

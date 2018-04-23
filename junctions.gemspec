@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Rails::Junctions::VERSION
   s.authors     = ['Paul McKibbin']
   s.email       = ['pmckibbin@gmail.com']
-  s.homepage    = 'http://blackrat.org'
+  s.homepage    = 'http://github.com/blackrat/junctions'
   s.summary     = 'Summary of Junctions.'
   s.description = 'Description of Junctions.'
   s.license     = 'MIT'

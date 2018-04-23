@@ -3,7 +3,7 @@ module Junctions
   class Engine
     class << self
       public
-      attr_accessor :junction_list, :core
+      attr_writer :junction_list, :core
 
       def junction_list
         @junction_list||=get_initializer_roots('junctions')
@@ -42,24 +42,6 @@ module Junctions
       def activate(base, name)
         junction_classes.each { |junction_class| switch_to_junction(junction_class.classify, base, name) }
       end
-    end
-
-    private
-    def for_all_junctions_reversed(&blk)
-      junction_list.reverse.each do |junction|
-        yield junction
-      end
-    end
-
-    def for_all_junctions(&blk)
-      junction_list.each do |junction|
-        yield junction
-      end
-    end
-
-    public
-    def junction_list
-      self.class.junction_list
     end
   end
 end

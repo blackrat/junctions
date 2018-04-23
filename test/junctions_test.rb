@@ -1,3 +1,4 @@
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '../lib'))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
 require 'test_helper'
 require 'wibble'
@@ -16,13 +17,13 @@ class Junctions::Test < MiniTest::Spec
     end
 
     it 'has a metal method' do
-      assert Wibble.new.metal=='metal included too'
+      assert_equal 'metal included too', Wibble.new.metal
     end
   end
 
   describe ::Wobble do
     it 'overrides the to_s from metal with its own method' do
-      assert Wobble.new.metal=='plastic included too'
+      assert_equal 'plastic included too', Wobble.new.metal
     end
   end
 end

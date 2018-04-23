@@ -1,11 +1,9 @@
 module Common
   module WibbleExtensions
+    include Junctions
     class << self
       def included(base)
-        module_name=self.name
-        base.class_eval do
-          Junctions::activate(base, module_name)
-        end
+        Junctions::activate(base, self.name)
       end
     end
 

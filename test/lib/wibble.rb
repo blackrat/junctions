@@ -1,6 +1,7 @@
-Junctions.core = 'common'
-Junctions.junction_list = ['metal']
-require 'lib/common/wibble_extensions'
+require 'junctions'
+Junctions::Engine.core = 'common'
+Junctions::Engine.junction_list = ['metal']
+require 'common/wibble_extensions'
 
 class Wibble
   include Common::WibbleExtensions

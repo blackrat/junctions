@@ -9,6 +9,10 @@ module Junctions
         @junction_list||=get_initializer_roots('junctions')
       end
 
+      def junction_classes
+        junction_list.reverse
+      end
+
       def core
         @core||='core'
       end
@@ -17,12 +21,8 @@ module Junctions
       def get_initializer_roots(*args)
         args.map do |arg|
           root=ENV[arg]
-          root && root.split(',') or nil
+          root && root.split(',').map(&:squish) or nil
         end.flatten.compact << core
-      end
-
-      def junction_classes
-        junction_list.reverse
       end
 
       def switch_to_junction(junction_class, base, base_name)
@@ -32,6 +32,7 @@ module Junctions
           base.instance_eval {
             include name.constantize
           } if name.gsub(/::[^:]*$/, '').constantize.const_defined?(name.demodulize)
+        rescue NameError
         rescue Exception => e
           puts(e.message)
           puts(e.backtrace)

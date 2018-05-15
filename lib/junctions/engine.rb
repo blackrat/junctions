@@ -33,6 +33,7 @@ module Junctions
             include name.constantize
           } if name.gsub(/::[^:]*$/, '').constantize.const_defined?(name.demodulize)
         rescue NameError
+        rescue LoadError
         rescue Exception => e
           puts(e.message)
           puts(e.backtrace)

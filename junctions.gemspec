@@ -19,11 +19,10 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
-  s.add_dependency 'activesupport', '~> 5'
+  s.add_dependency 'activesupport', '>= 5.2.4.3'
 
-  s.add_development_dependency 'bundler', '~> 0'
-  s.add_development_dependency 'rake', '~> 0'
-  s.add_development_dependency 'minitest', '~> 0'
-  s.add_development_dependency 'simplecov', '~> 0'
-  s.add_development_dependency 'config_files', '~> 0'
+  s.add_development_dependency 'bundler', '~> 2.2', '>= 2.2.33'
+  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.6'
+  s.add_development_dependency 'simplecov', '~> 0.21'
+  s.add_development_dependency 'config_files', '~> 0.1.6'
 end

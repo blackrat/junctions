@@ -1,4 +1,5 @@
 require 'active_support/inflector'
+
 module Junctions
   class Engine
     class << self

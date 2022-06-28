@@ -1,3 +1,4 @@
+require 'active_support/core_ext/module'
 require 'junctions/engine'
 require "junctions/version"
 
